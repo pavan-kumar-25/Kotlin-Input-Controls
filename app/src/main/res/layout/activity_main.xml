@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/gradient"
+        android:elevation="4dp"
+        app:title="Life at Christ"
+        app:titleTextColor="@color/white"
+        app:titleTextAppearance="@style/ToolbarTitle"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#ECDBDB"
+                app:cardCornerRadius="30dp">
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/response_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:checked="false"
+                    android:text="Record your memories "
+                    android:textSize="18sp"
+                    android:textColor="@color/green"
+                    android:textFontWeight="900"/>
+            </androidx.cardview.widget.CardView>
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+
+                android:layout_height="200dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Let's add your memory..."
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:text="Add Image"
+                android:layout_marginLeft="90dp"
+                android:id="@+id/btn_image"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginBottom="20dp"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Post your thoughts..."
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"/>
+
+            <Spinner
+                android:id="@+id/spinnerMajor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/white"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:background="@color/white"
+                android:layout_marginBottom="15dp"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_centerHorizontal="true"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusedSearchResultHighlightColor="@color/black"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:text="Male"
+                    android:textColor="@color/green"/>
+                <RadioButton android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:text="Female"
+                    android:textColor="@color/green"/>
+                <RadioButton android:id="@+id/radio_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:text="Others"
+                    android:textColor="@color/green"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/prior_knowledge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:text="Hobbies"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textFontWeight="700"/>
+
+            <CheckBox android:id="@+id/coding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:text="Coding" />
+
+            <CheckBox android:id="@+id/games"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:text="Video Games"/>
+
+            <CheckBox android:id="@+id/music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:text="Music"/>
+
+            <TextView
+                android:id="@+id/pref_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:text="At what time does your class start?"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textFontWeight="700"/>
+
+            <TimePicker
+                android:id="@+id/timepicker"
+                android:layout_width="366dp"
+                android:layout_height="368dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:numbersInnerTextColor="@color/white"
+                android:textColor="#FFFFFF"
+                android:timePickerMode="clock" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:text="When did you join Christ"
+                android:textSize="20sp"
+                android:textFontWeight="700"
+                android:textColor="@color/white"
+                android:layout_marginBottom="20dp"/>
+
+            <DatePicker
+                android:id="@+id/datepicker"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginLeft="20dp"
+                android:datePickerMode="calendar"/>
+<!--                android:datePickerTextColor="@color/white" />-->
+
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:progressTint="@android:color/white" />
+
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/webview"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
